@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.aside`
-    background-color: ${(props)=> props.theme.colors.background};
+    background-color: ${(props) => props.theme.colors.background};
     width: 360px;
     height: 100vh;
     overflow-y: auto;
@@ -19,7 +19,8 @@ flex-direction: column;
 justify-content: center;
 background-color: #ffffff;
 padding: 0px;
-`;  
+
+`;
 
 export const Logo = styled.img`
     margin-bottom:1px;
@@ -34,15 +35,17 @@ export const Carousel = styled(Slider)`
   .slick-slide {
       margin-right: 30px;
   }
+  
 `;
 
 export const CarouselTitle = styled.h1`
     font-family: ${(props) => props.theme.fonts.regular};
-    color: ${(props)=> props.theme.colors.text};
+    color: ${(props) => props.theme.colors.text};
     font-size: 20px;
     font-weight: bold;
     line-height: 25px;
     margin: 16px 0;
+    
 `;
 
 export const ModalTitle = styled.p`
@@ -53,6 +56,7 @@ export const ModalTitle = styled.p`
   line-height: 29px;
   font-size: 24px;
   font-weight: bold;
+  
 `;
 
 export const ModalContent = styled.p`
