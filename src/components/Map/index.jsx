@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 //import { GoogleApiWrapper } from "node_modules/google-maps-react/index";
-import { useDispatch, useSelector } from "react-redux";
-import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
+import { useDispatch, useSelector } from 'react-redux';
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 
-import { setRestaurants, setRestaurant } from "../../redux/modules/restaurants";
+import { setRestaurants, setRestaurant } from '../../redux/modules/restaurants';
 
 export const MapContainer = (props) => {
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export const MapContainer = (props) => {
 
     useEffect(() => {
         if (query) {
-            searchNearby(query);
+            searchByQuery(query);
         }
     }, [query]);
 
@@ -29,8 +29,7 @@ export const MapContainer = (props) => {
 
         const request = {
             placeId,
-            fiels: ['name', 'opening_hours', 'formatted_address', 'formatted_phone_number'],
-
+            fields: ['name', 'opening_hours', 'formatted_address', 'formatted_phone_number'],
         };
 
         service.getDetails(request, (place, status) => {
@@ -57,7 +56,6 @@ export const MapContainer = (props) => {
                 dispatch(setRestaurants(results));
             }
         });
-
     }
 
     function searchNearby(map, center) {
@@ -95,6 +93,6 @@ export const MapContainer = (props) => {
 };
 
 export default GoogleApiWrapper({
-    apikey: process.env.REACT_APP_GOOGLE_API_KEY,
+    apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
     language: 'pt-BR',
-})(MapContainer);
+  })(MapContainer);
